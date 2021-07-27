@@ -11,6 +11,11 @@ public class CustomerService implements ICustomerService {
     private ICustomerRepository customerRepository;
 
     @Override
+    public boolean insertWithStoredProcedure(Customer customer) {
+        return customerRepository.insertWithStoredProcedure(customer);
+    }
+
+    @Override
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
